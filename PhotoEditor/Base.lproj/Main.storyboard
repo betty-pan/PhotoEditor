@@ -1,24 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f8q-H1-ng0">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-wb-JOc" userLabel="Illustration View">
+                                <rect key="frame" x="75" y="330" width="240" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoEditor" translatesAutoresizingMaskIntoConstraints="NO" id="ecJ-7A-o04">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoj-Na-R73">
+                                        <rect key="frame" x="0.0" y="127" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-0y-kPL">
+                                <rect key="frame" x="16" y="102" width="178" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFW-Zw-4zL">
+                                <rect key="frame" x="165" y="726" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="GrayColor"/>
+                                <color key="tintColor" name="PrimaryColor"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8m-3u-GGi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nOW-Mg-6xg"/>
+                    <connections>
+                        <outlet property="addPhotoBtn" destination="XFW-Zw-4zL" id="JkE-JR-OWP"/>
+                        <outlet property="illustrationView" destination="bLb-wb-JOc" id="L4X-Xp-dFY"/>
+                        <outlet property="imageView" destination="fgQ-0y-kPL" id="Yr3-Pl-JJo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="724.61538461538464" y="73.93364928909952"/>
+        </scene>
+        <!--Editing View Controller-->
+        <scene sceneID="TUx-Ff-veB">
+            <objects>
+                <viewController storyboardIdentifier="EditingViewController" id="O7v-n0-OoH" customClass="EditingViewController" customModule="PhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tbQ-tr-1xO" userLabel="Full Screen View">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oWL-Be-0eA" userLabel="Main Stack View">
+                                <rect key="frame" x="0.0" y="755" width="390" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU0-Qx-iMk">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="55"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <state key="normal" image="crop.rotate" catalog="system">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showRotateMode:" destination="O7v-n0-OoH" eventType="touchUpInside" id="IVS-ja-XUx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZP-c9-RYN">
+                                        <rect key="frame" x="98.666666666666686" y="0.0" width="94" height="55"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="stf-3Y-2A1"/>
+                                        </constraints>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <state key="normal" image="square.split.bottomrightquarter.fill" catalog="system">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showRatioMode:" destination="O7v-n0-OoH" eventType="touchUpInside" id="msr-5P-ms4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGa-g8-pLO">
+                                        <rect key="frame" x="197.66666666666666" y="0.0" width="93.666666666666657" height="55"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <state key="normal" image="pencil.tip.crop.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeColor:" destination="O7v-n0-OoH" eventType="touchUpInside" id="wrE-gF-8sd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbt-Db-B4B">
+                                        <rect key="frame" x="296.33333333333331" y="0.0" width="93.666666666666686" height="55"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                        <state key="normal" title="SAVE">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="safeImage:" destination="O7v-n0-OoH" eventType="touchUpInside" id="TJd-9J-Bn5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1rs-Vu-PtI" userLabel="Ratio Stack View">
+                                <rect key="frame" x="0.0" y="714" width="390" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0E-T9-Z22">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="33"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="Original">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeRatio:" destination="O7v-n0-OoH" eventType="touchUpInside" id="BuY-qH-krr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4v8-SA-BUy">
+                                        <rect key="frame" x="98.666666666666686" y="0.0" width="94" height="33"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="Square">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeRatio:" destination="O7v-n0-OoH" eventType="touchUpInside" id="QH3-lF-IJB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-fw-Hs2">
+                                        <rect key="frame" x="197.66666666666666" y="0.0" width="93.666666666666657" height="33"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="16:9">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeRatio:" destination="O7v-n0-OoH" eventType="touchUpInside" id="dRh-OJ-V1p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SC-LX-8gw">
+                                        <rect key="frame" x="296.33333333333331" y="0.0" width="93.666666666666686" height="33"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="4:3">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeRatio:" destination="O7v-n0-OoH" eventType="touchUpInside" id="C6Q-FH-nN8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9p-Of-SNZ" userLabel="Image Background View">
+                                <rect key="frame" x="0.0" y="98" width="390" height="536.33333333333337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHx-rS-iSe">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="536.33333333333337"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lC9-JC-1q6" userLabel="Rotate Stack View">
+                                <rect key="frame" x="0.0" y="714" width="390" height="31.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfu-BF-qYB">
+                                        <rect key="frame" x="0.0" y="0.0" width="126.66666666666667" height="31.666666666666668"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <state key="normal" image="flip.horizontal.fill" catalog="system">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flipHorizontally:" destination="O7v-n0-OoH" eventType="touchUpInside" id="Q2t-mz-Wn3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPG-IP-4hb">
+                                        <rect key="frame" x="131.66666666666666" y="0.0" width="126.66666666666666" height="31.666666666666668"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <state key="normal" image="rotate.left.fill" catalog="system">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rotateFromLeft:" destination="O7v-n0-OoH" eventType="touchUpInside" id="Bb1-f1-eLm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-DH-yIw">
+                                        <rect key="frame" x="263.33333333333331" y="0.0" width="126.66666666666669" height="31.666666666666668"/>
+                                        <color key="backgroundColor" name="GrayColor"/>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <state key="normal" image="rotate.right.fill" catalog="system">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rotateFromRight:" destination="O7v-n0-OoH" eventType="touchUpInside" id="Y7I-gZ-Z0e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pP7-y3-goc"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oWL-Be-0eA" firstAttribute="top" secondItem="1rs-Vu-PtI" secondAttribute="bottom" constant="8" symbolic="YES" id="1QE-bu-6Ve"/>
+                            <constraint firstItem="1rs-Vu-PtI" firstAttribute="trailing" secondItem="pP7-y3-goc" secondAttribute="trailing" id="5ed-Qi-y7V"/>
+                            <constraint firstItem="oWL-Be-0eA" firstAttribute="leading" secondItem="pP7-y3-goc" secondAttribute="leading" id="HrX-rP-8z2"/>
+                            <constraint firstItem="1rs-Vu-PtI" firstAttribute="leading" secondItem="pP7-y3-goc" secondAttribute="leading" id="PfR-Qh-nHl"/>
+                            <constraint firstItem="lC9-JC-1q6" firstAttribute="leading" secondItem="pP7-y3-goc" secondAttribute="leading" id="aWK-9r-h6H"/>
+                            <constraint firstItem="oWL-Be-0eA" firstAttribute="top" secondItem="lC9-JC-1q6" secondAttribute="bottom" constant="9.3333333333333712" id="g9t-0R-L5y"/>
+                            <constraint firstItem="oWL-Be-0eA" firstAttribute="bottom" secondItem="pP7-y3-goc" secondAttribute="bottom" id="gw3-hz-091"/>
+                            <constraint firstItem="oWL-Be-0eA" firstAttribute="trailing" secondItem="pP7-y3-goc" secondAttribute="trailing" id="qd8-Bm-stf"/>
+                            <constraint firstItem="lC9-JC-1q6" firstAttribute="trailing" secondItem="pP7-y3-goc" secondAttribute="trailing" id="zvN-7P-BeQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullScreenView" destination="tbQ-tr-1xO" id="b1E-Ci-xnD"/>
+                        <outlet property="imageBackgroundView" destination="d9p-Of-SNZ" id="fMq-hc-bDn"/>
+                        <outlet property="ratioStackView" destination="1rs-Vu-PtI" id="yRA-o7-jun"/>
+                        <outlet property="rotateStackView" destination="lC9-JC-1q6" id="zQp-L5-GNO"/>
+                        <outlet property="selectedPhotoImageView" destination="WHx-rS-iSe" id="Wor-M7-r9t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1b-iT-68h" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633.8461538461538" y="73.93364928909952"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9hq-s4-F89">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f8q-H1-ng0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yfu-EL-3Gc">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vP8-Ag-rLA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cr5-TP-BLW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204.61538461538461" y="73.93364928909952"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="crop.rotate" catalog="system" width="114" height="128"/>
+        <image name="flip.horizontal.fill" catalog="system" width="128" height="112"/>
+        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="photoEditor" width="128" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="rotate.left.fill" catalog="system" width="128" height="124"/>
+        <image name="rotate.right.fill" catalog="system" width="128" height="124"/>
+        <image name="square.split.bottomrightquarter.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GrayColor">
+            <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="0.94499999284744263" green="0.82400000095367432" blue="0.43500000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
